@@ -1,23 +1,106 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css';
+import React from 'react';
+import Header from './Header.js';
+import AddTask from  './AddTask.js';
+import Tasks from './Tasks.js';
+import { Container } from 'semantic-ui-react';
+import Box from '@mui/material/Box';
+import { List } from '@mui/material';
+import { ListItem } from '@mui/material/ListItem';
+import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+  const [emptyList, setEmptyList] = useState(false);
+
+  useEffect(() => {
+    fetch('http://localhost:6001/tasks')
+      .then((r) => r.json())
+      .then((data) => setTasks(data))
+      .then(() => console.log(tasks))
+  }, []);
+
+  function handleChange(e) {
+    setNewTask(e.target.value);
+    console.log(newTask);
+  }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    console.log('task added');
+
+    const formData = {
+      id: uuidv4(),
+      title: newTask
+    };
+
+    const updatedTasks = [...tasks, formData];
+    setTasks(updatedTasks);
+    setNewTask('');
+    console.log(formData);
+
+   fetch('http://localhost:6001/tasks',{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData),
+      })
+      .then((r) => r.json())
+      .catch((error) => console.log(error));
+  }
+
+  function handleDelete(id) {  
+    fetch(`http://localhost:6001/tasks/${id}`,{
+      method: "DELETE",
+    })
+    .then((r) => r.json())
+    .then(deleteTask(id));
+  }
+
+  function deleteTask(id){
+    const updatedTasks = tasks.filter((task) => task.id !== id );
+    setTasks(updatedTasks);
+  }
+
+  function handleUpdateTask(updatedObj){
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === updatedObj.id) {
+        return updatedObj;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <div>
+          <Header
+          />
+        </div>
+        <br></br>
+        <div>
+          <AddTask 
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            newTask={newTask} 
+            setEmptyList={setEmptyList}
+            setNewTask={setNewTask}
+            />
+        </div>
+        <br></br>
+              <Tasks 
+                allTasks={tasks} 
+                deleteTask={handleDelete}
+                setAllTasks={setTasks}
+                updateTask={handleUpdateTask}
+              />                
+      </Container>
     </div>
   );
 }
