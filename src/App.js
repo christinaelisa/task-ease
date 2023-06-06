@@ -94,12 +94,15 @@ function App() {
             />
         </div>
         <br></br>
+        <div className="taskbox">
               <Tasks 
                 allTasks={tasks} 
                 deleteTask={handleDelete}
                 setAllTasks={setTasks}
                 updateTask={handleUpdateTask}
-              />                
+              />   
+        </div>
+                           
       </Container>
     </div>
   );

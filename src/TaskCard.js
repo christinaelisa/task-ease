@@ -37,7 +37,7 @@ function TaskCard ({id, title, deleteTask, updateTask, allTasks, setAllTasks}) {
     }
 
     return(
-        <div className="tasklist" key={id}>
+        <div key={id}>
             <br></br>
             {isInEditMode ? <EditTask id={id} title={title} 
                 updateTask={updateTask} 

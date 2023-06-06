@@ -1,16 +1,24 @@
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
 .App {
     align-items: center;
     background-color: #ffcfdf;
     background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
     border-width: 0px 2px 2px;
-    background-position: center;
     height: auto;
     display: flex;
-    position: relative;
+    position: center;
     text-align: center;
+    box-sizing: border-box;
     justify-content: center;
     min-height: 100vh;
+    width: 100%;
     padding: 25px;
   }
 
@@ -26,7 +34,7 @@ code {
 
 .checked {
   text-decoration: line-through;
-}pwd
+}
 
 .taskbox {
   align-items: center;
@@ -35,9 +43,10 @@ code {
   background-color: white;
   margin: auto;
   height: auto;
-  width: 35vw;
+  width: auto;
   position: relative;
   text-align: center;
   justify-content: center;
   border-radius: 10px;
+  white-space: initial;
 }

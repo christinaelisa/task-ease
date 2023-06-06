@@ -1,23 +1,22 @@
 import React from 'react';
-import { Fab, TextField } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 
 function AddTask ({handleSubmit, handleChange, newTask}) {
 
     return(
         <div >
             <form onSubmit={handleSubmit}>
-                <TextField 
-                    type="text" 
-                    placeholder="Add task..." 
-                    onChange = {handleChange} 
-                    value={newTask} 
-                    required={true}
-                    autoComplete="off"
-                />
-                <Fab size="small" type="submit">
-                    <AddIcon />
-                </Fab>
+
+            <div class="ui action input">
+                <input 
+                      type="text" 
+                      placeholder="Add task..." 
+                      onChange = {handleChange} 
+                      value={newTask} 
+                      required={true}
+                      autoComplete="off"
+                ></input>
+            <button class="ui button" type="submit">Submit</button>
+            </div>
             </form>
         </div>
     );

@@ -1,7 +1,6 @@
 import TaskCard from "./TaskCard";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
 
 function Tasks({allTasks, deleteTask, updateTask, setAllTasks}){
 
