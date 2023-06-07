@@ -1,12 +1,16 @@
 {
   "tasks": [
     {
-      "id": "a3ccf154-cec7-4552-a55c-d5a6283ac395",
+      "id": "6477a138-c2c4-47e4-b2c4-41d1a54e839f",
       "title": "Hot yoga"
     },
     {
-      "id": "4efe1c66-1b9f-4bdd-9e00-d612310bb73c",
-      "title": "Gold's Gym"
+      "id": "34ae9edb-a0ed-4c42-9364-919d8fd25339",
+      "title": "Pilates"
+    },
+    {
+      "id": "34ed8cc1-6402-417d-b6ec-1343e7ba7531",
+      "title": "Water the plants"
     }
   ]
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function AddTask ({handleSubmit, handleChange, newTask}) {
 
     return(
-        <div >
+        <div>
             <form onSubmit={handleSubmit}>
 
             <div class="ui action input">
@@ -14,6 +14,7 @@ function AddTask ({handleSubmit, handleChange, newTask}) {
                       value={newTask} 
                       required={true}
                       autoComplete="off"
+                      maxlength="40"
                 ></input>
             <button class="ui button" type="submit">Submit</button>
             </div>
