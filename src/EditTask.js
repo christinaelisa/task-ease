@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
-function EditTask({id, title, submitEdit, updateTask, isInEditMode, setIsInEditMode}){
+function EditTask({id, title, updateTask, isInEditMode, setIsInEditMode}){
 
     const [editedTask, setEditedTask] = useState(title);
 

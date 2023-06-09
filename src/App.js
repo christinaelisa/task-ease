@@ -4,9 +4,6 @@ import Header from './Header.js';
 import AddTask from  './AddTask.js';
 import Tasks from './Tasks.js';
 import { Container } from 'semantic-ui-react';
-import Box from '@mui/material/Box';
-import { List } from '@mui/material';
-import { ListItem } from '@mui/material/ListItem';
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -14,7 +11,6 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
-  const [emptyList, setEmptyList] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:6001/tasks')
@@ -89,7 +85,6 @@ function App() {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             newTask={newTask} 
-            setEmptyList={setEmptyList}
             setNewTask={setNewTask}
             />
         </div>
@@ -101,8 +96,7 @@ function App() {
                 setAllTasks={setTasks}
                 updateTask={handleUpdateTask}
               />   
-        </div>
-                           
+        </div>  
       </Container>
     </div>
   );
