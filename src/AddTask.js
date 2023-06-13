@@ -6,7 +6,7 @@ function AddTask ({handleSubmit, handleChange, newTask}) {
         <div>
             <form onSubmit={handleSubmit}>
 
-            <div class="ui action input">
+            <div className="ui action input">
                 <input 
                       type="text" 
                       placeholder="Add task..." 
@@ -14,7 +14,7 @@ function AddTask ({handleSubmit, handleChange, newTask}) {
                       value={newTask} 
                       required={true}
                       autoComplete="off"
-                      maxlength="40"
+                      maxLength="40"
                 ></input>
             <button class="ui button" type="submit">Submit</button>
             </div>

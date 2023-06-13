@@ -47,7 +47,7 @@ function TaskCard ({id, title, deleteTask, updateTask, allTasks, setAllTasks}) {
                         <span className={checked ? 'checked' : ''}><h4>{title}</h4></span>
                     </div>
                 <IconButton onClick={handleEdit} className="edit">
-                    <EditIcon onClick={handleEdit}/>
+                    <EditIcon/>
                 </IconButton>
                 <DeleteTask id={id} deleteTask={deleteTask}/>
             </div>

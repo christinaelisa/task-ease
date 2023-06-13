@@ -1,20 +1,20 @@
 {
   "tasks": [
     {
-      "id": "779a123c-d13b-4b2b-a3fb-23826a835727",
-      "title": "Hot yoga"
-    },
-    {
-      "id": "96353d76-e995-4b7e-b734-be7a972b24e4",
-      "title": "Walk the dog"
-    },
-    {
-      "id": "c0900b30-9346-4910-a98b-4aac37ab77e9",
+      "id": "07a9ea81-d56f-4cea-85a4-808c21a9aee3",
       "title": "Pilates"
     },
     {
-      "id": "2fc8be19-a88e-4913-bc5f-8c1f4c18371b",
-      "title": "Gold's"
+      "id": "eb0a8771-8b27-423e-97cb-f584553a6c36",
+      "title": "Walk the dog"
+    },
+    {
+      "id": "1a4fbe27-ecc8-4b92-99f0-257aacf709c5",
+      "title": "Coffee run"
+    },
+    {
+      "id": "41c6804e-754d-4e08-a87d-e7b106921bfc",
+      "title": "Hot yoga"
     }
   ]
 }
