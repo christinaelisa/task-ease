@@ -3,15 +3,15 @@ import React from 'react';
 import Header from './Header.js';
 import AddTask from  './AddTask.js';
 import Tasks from './Tasks.js';
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+//import { createTheme } from '@material-ui/core/styles';
+//import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import { Container } from 'semantic-ui-react';
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const theme = createTheme();
+  //const theme = createTheme();
 
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
